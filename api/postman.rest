@@ -1,0 +1,50 @@
+### USER AUTH
+POST http://localhost:4000/auth/user/v1/register
+Content-Type: application/json
+
+{
+  "email": "manuel2@email.com",
+  "firstName": "Manuel",
+  "lastName": "Lopez",
+  "password": "manuel"
+}
+
+###
+POST http://localhost:4000/auth/user/v1/login
+Content-Type: application/json
+
+{
+  "email": "manuel2@email.com",
+  "password": "manuel"
+}
+
+### NOTES
+POST http://localhost:5000/api/note
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwYzVhNDg1LTAyMjQtNDc1YS1hNWIzLWQ4MzZhYzEyOWFlNSIsImlhdCI6MTY1MDc1MzAwOX0.qI2LA-MZkP8z_ebi8LpuocUF3lyaLs6E5wb-m1YM6wc
+
+{
+  "title": "test",
+  "body": "test"
+}
+
+### 
+GET http://localhost:5000/api/note
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwYzVhNDg1LTAyMjQtNDc1YS1hNWIzLWQ4MzZhYzEyOWFlNSIsImlhdCI6MTY1MDc1MzAwOX0.qI2LA-MZkP8z_ebi8LpuocUF3lyaLs6E5wb-m1YM6wc
+
+###
+POST http://localhost:5000/api/note/share
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwYzVhNDg1LTAyMjQtNDc1YS1hNWIzLWQ4MzZhYzEyOWFlNSIsImlhdCI6MTY1MDc1MzAwOX0.qI2LA-MZkP8z_ebi8LpuocUF3lyaLs6E5wb-m1YM6wc
+
+{
+  "noteId": "5c936cb6-3dad-4420-abfb-473937c00e23",
+  "shareToUserEmail": "manuel2@email.com"
+}
+
+###
+GET http://localhost:5000/api/note/sharedNotes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1MWQyZWZhLWU3MTktNGEyNi1iYjI2LWUwNDZlZmZlZmI4MSIsImlhdCI6MTY1MDc1NzA3OX0.rCsAhn8fZklrbqE4kJc5TbX2F4Gzrt3sL9VRXVx44m4
+
